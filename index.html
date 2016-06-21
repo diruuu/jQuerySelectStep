@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Select Step</title>
+  <!-- For syntax highlighter on demo page -->
+  <link rel="stylesheet" href="././lib/sh/shCore.css">
+  <link rel="stylesheet" href="././lib/sh/shThemeDefault.css">
+
+  <link rel="stylesheet" href="./demo.css">
+
+  <!-- default style of jQuery select step plugin -->
+  <link rel="stylesheet" href="./dist/jquery-select-step.css">
+</head>
+<body>
+  <div class="container">
+    <div class="demo">
+      <select name="room" id="room" class="select-step">
+        <option value="1">Any</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <select name="room" id="room" class="select-step">
+        <option value="satu">Satu</option>
+        <option value="dua">Dua</option>
+        <option value="tiga">Tiga</option>
+        <option value="empat">Empat</option>
+        <option value="lima">Lima</option>
+        <option value="enam">Enam</option>
+        <option value="tujuh">Tujuh</option>
+        <option value="delapan">Delapan</option>
+        <option value="sembilan">Sembilan</option>
+      </select>
+    </div>
+    <div class="code">
+      <div class="html-code">
+        <pre class="brush: xml">
+          &lt;select name="room" id="room" class="select-step"&gt;
+            &lt;option value="1"&gt;Any&lt;/option&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+          &lt;/select&gt;
+
+          &lt;select name="room" id="room" class="select-step"&gt;
+            &lt;option value="satu"&gt;Satu&lt;/option&gt;
+            &lt;option value="dua"&gt;Dua&lt;/option&gt;
+            &lt;option value="tiga"&gt;Tiga&lt;/option&gt;
+            &lt;option value="empat"&gt;Empat&lt;/option&gt;
+            &lt;option value="lima"&gt;Lima&lt;/option&gt;
+            &lt;option value="enam"&gt;Enam&lt;/option&gt;
+            &lt;option value="tujuh"&gt;Tujuh&lt;/option&gt;
+            &lt;option value="delapan"&gt;Delapan&lt;/option&gt;
+            &lt;option value="sembilan"&gt;Sembilan&lt;/option&gt;
+          &lt;/select&gt;
+        </pre>
+      </div>
+      <div class="js-code">
+        <pre class="brush: js">
+          jQuery(document).ready(function(){
+            jQuery(".select-step").each(function(){
+              jQuery(this).selectStep({
+                incrementLabel: "-",
+                decrementLabel: "+",
+                onChange: function(value) {
+                  console.log(value, "value");
+                }
+              });
+            });
+          });
+        </pre>
+      </div>
+    </div>
+  </div>
+
+<script src="./lib/jquery-1.12.4.min.js"></script>
+
+<!-- For syntax highlighter on demo page -->
+<script src="./lib/sh/shCore.js"></script>
+<script src="./lib/sh/shBrushJScript.js"></script>
+<script src="./lib/sh/shBrushXml.js"></script>
+
+<script src="./dist/jquery-select-step.js"></script>
+<script src="./demo.js"></script>
+</body>
+</html>
