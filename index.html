@@ -11,37 +11,70 @@
 
   <!-- default style of jQuery select step plugin -->
   <link rel="stylesheet" href="./dist/jquery-select-step.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container">
-    <div class="demo">
-      <select name="room" id="room" class="select-step">
-        <option value="1">Any</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      <select name="room" id="room" class="select-step">
-        <option value="satu">Satu</option>
-        <option value="dua">Dua</option>
-        <option value="tiga">Tiga</option>
-        <option value="empat">Empat</option>
-        <option value="lima">Lima</option>
-        <option value="enam">Enam</option>
-        <option value="tujuh">Tujuh</option>
-        <option value="delapan">Delapan</option>
-        <option value="sembilan">Sembilan</option>
-      </select>
+    <div class="demo row">
+      <div class="column">
+        <div class="label">Before:</div>
+        <select name="room" id="room">
+          <option value="1">Any</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <select name="room" id="room">
+          <option value="satu">Satu</option>
+          <option value="dua">Dua</option>
+          <option value="tiga">Tiga</option>
+          <option value="empat">Empat</option>
+          <option value="lima">Lima</option>
+          <option value="enam">Enam</option>
+          <option value="tujuh">Tujuh</option>
+          <option value="delapan">Delapan</option>
+          <option value="sembilan">Sembilan</option>
+        </select>
+      </div>
+
+      <div class="column">
+        <div class="label">After:</div>
+        <select name="room" id="room" class="select-step">
+          <option value="1">Any</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <select name="room" id="room" class="select-step">
+          <option value="satu">Satu</option>
+          <option value="dua">Dua</option>
+          <option value="tiga">Tiga</option>
+          <option value="empat">Empat</option>
+          <option value="lima">Lima</option>
+          <option value="enam">Enam</option>
+          <option value="tujuh">Tujuh</option>
+          <option value="delapan">Delapan</option>
+          <option value="sembilan">Sembilan</option>
+        </select>
+      </div>
     </div>
-    <div class="code">
-      <div class="html-code">
+    <div class="code row">
+      <div class="html-code column">
         <pre class="brush: xml">
           &lt;select name="room" id="room" class="select-step"&gt;
             &lt;option value="1"&gt;Any&lt;/option&gt;
@@ -70,7 +103,7 @@
           &lt;/select&gt;
         </pre>
       </div>
-      <div class="js-code">
+      <div class="js-code column">
         <pre class="brush: js">
           jQuery(document).ready(function(){
             jQuery(".select-step").each(function(){
