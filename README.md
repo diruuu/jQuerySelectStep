@@ -4,8 +4,8 @@ Transform select element into an input step.
 ## Instalation
 ```javascript
 jQuery(".select-element").selectStep({
-  incrementLabel: "-",
-  decrementLabel: "+",
+  incrementLabel: "+",
+  decrementLabel: "-",
   onChange: function(value) {
     console.log(value, "value");
   }
