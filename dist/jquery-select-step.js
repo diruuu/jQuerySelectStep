@@ -58,9 +58,7 @@
                 var inclass = (selectedOptionKey >= (options.length -1)) ? 'incrementStep stepDis' : 'incrementStep';
                 var fakeElement = "<div class=\"jquery-select-step-element\">\n                  <div class=\"" + declass + "\">" + decrementLabel + "</div>\n                  <div class=\"selectStepValue\" data-key=\"" + selectedOptionKey + "\" data-value=\"" + selectedOptionvalue + "\">\n                    " + selectedOptionName + "\n                  </div>\n                  <div class=\"" + inclass + "\">" + incrementLabel + "</div>\n                </div>";
                 // Wrap select to a div
-                var parentElement = $(element)
-                    .wrap("<div class=\"jquery-select-step\"></div>")
-                    .parent();
+                var parentElement = $(element).wrap("<div class=\"jquery-select-step\"></div>").parent();
                 // Append the fake element
                 parentElement.append(fakeElement);
                 // Fire callback when finished
