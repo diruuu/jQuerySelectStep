@@ -54,11 +54,11 @@
                 var selectedOptionKey = isSelected.length ? isSelected[0].key : null;
                 var selectedOptionvalue = isSelected.length ? isSelected[0].value : null;
                 // Create the fake element
-                var fakeElement = "<div class=\"jquery-select-step-element\">\n                  <div class=\"decrementStep\">" + decrementLabel + "</div>\n                  <div class=\"selectStepValue\" data-key=\"" + selectedOptionKey + "\" data-value=\"" + selectedOptionvalue + "\">\n                    " + selectedOptionName + "\n                  </div>\n                  <div class=\"incrementStep\">" + incrementLabel + "</div>\n                </div>";
+                var declass = (selectedOptionKey <= 0) ? 'decrementStep stepDis' : 'decrementStep';
+                var inclass = (selectedOptionKey >= (options.length -1)) ? 'incrementStep stepDis' : 'incrementStep';
+                var fakeElement = "<div class=\"jquery-select-step-element\">\n                  <div class=\"" + declass + "\">" + decrementLabel + "</div>\n                  <div class=\"selectStepValue\" data-key=\"" + selectedOptionKey + "\" data-value=\"" + selectedOptionvalue + "\">\n                    " + selectedOptionName + "\n                  </div>\n                  <div class=\"" + inclass + "\">" + incrementLabel + "</div>\n                </div>";
                 // Wrap select to a div
-                var parentElement = $(element)
-                    .wrap("<div class=\"jquery-select-step\"></div>")
-                    .parent();
+                var parentElement = $(element).wrap("<div class=\"jquery-select-step\"></div>").parent();
                 // Append the fake element
                 parentElement.append(fakeElement);
                 // Fire callback when finished
@@ -87,6 +87,10 @@
             // Get the new key
             var newKey = (type === "decrement" ? (key - 1) : (key + 1));
             var _a = options[newKey], name = _a.name, value = _a.value; // Get name and value of the new key
+            // Set Navigation State
+            var fakeElement = jQuery(element).find(".select-step").next('.jquery-select-step-element');
+            (newKey <= 0) ? fakeElement.find('.decrementStep').addClass('stepDis') : fakeElement.find('.decrementStep').removeClass('stepDis');
+            (newKey >= (options.length - 1)) ? fakeElement.find('.incrementStep').addClass('stepDis') : fakeElement.find('.incrementStep').removeClass('stepDis');
             // Change value
             selectStepValue.text(name);
             selectStepValue.attr("data-key", newKey);
