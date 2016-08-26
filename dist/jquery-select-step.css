@@ -44,7 +44,7 @@
     background: #FFF;
     cursor: pointer;
 }
-.decrementStep { 
+.decrementStep {
     border-radius: 2px 0 0 2px;
 }
 .incrementStep {
@@ -56,4 +56,5 @@
 }
 .stepDis {
     background: #EEE; color: #CCC;
+    cursor: not-allowed
 }
